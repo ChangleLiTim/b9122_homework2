@@ -19,7 +19,8 @@ while len(urls) > 0 and len(opened) < maxNumUrl:
         req = urllib.request.Request(curr_url,headers={'User-Agent': 'Mozilla/5.0'})
         webpage = urllib.request.urlopen(req).read()
         opened.append(curr_url)
-
+        
+    # Find the error if encountered
     except Exception as ex:
         print("Unable to access= "+curr_url)
         print(ex)
